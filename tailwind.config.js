@@ -1,0 +1,72 @@
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+
+  theme: {
+    extend: {},
+
+    fontFamily: {
+      sans: ['Poppins'],
+    },
+    variants: {
+      width: ["responsive", "hover", "focus"]
+    },
+
+    colors: {
+      "black-color": "#111111",
+      "black-secondary-color": "1E1E1E",
+      "yellow": "#F8FF99",
+      "green": "#99FFA7",
+       "blue": "#70DDFF",
+      "white": "#FFFFFF",
+      'gray-100': '#F8F8F8',
+      'gray-200': '#EAEAEA',
+      'gray-300': '#D8D8D8',
+      'gray-400': '#C8C8C8',
+      'gray-500': '#B8B8B8',
+      'gray-600': '#A8A8A8',
+      'gray-700': '#979797',
+      'gray-800': '#878787',
+      'gray-900': '#767676',
+      'black': '#000000',
+      'blue-100': '#E6F7FF',
+      'blue-200': '#BEE3F8',
+      'blue-300': '#87C5F2',
+      'blue-400': '#54ABE3',
+      'blue-500': '#1E96DA',
+      'blue-600': '#0065C0',
+      'blue-700': '#0052B4',
+      'blue-800': '#003E8F',
+      'blue-900': '#00227A',
+      'green-100': '#E6FFED',
+      'green-200': '#C1FDB8',
+      'green-300': '#9CFC70',
+      'green-400': '#78FA4C',
+      'green-500': '#52F82C',
+      'green-600': '#38E817',
+      'green-700': '#1EDB00',
+      'green-800': '#00B800',
+      'green-900': '#008E00',
+      'red-100': '#FFEEEE',
+      'red-200': '#FACDCD',
+      'red-300': '#F29B9B',
+      'red-400': '#E66A6A',
+      'red-500': '#D64545',
+      'red-600': '#BA2525',
+      'red-700': '#A61B1B',
+      'red-800': '#911111',
+      'red-900': '#780A0A',
+      'black-100': '#F8F8F8',
+      'black-200': '#EAEAEA',
+      'black-300': '#D8D8D8',
+      'black-400': '#C8C8C8',
+      'black-500': '#B8B8B8',
+      'black-600': '#A8A8A8',
+      'black-700': '#979797',
+      'black-800': '#878787',
+      'black-900': '#767676',
+
+    }
+
+  },
+  plugins: [],
+}
