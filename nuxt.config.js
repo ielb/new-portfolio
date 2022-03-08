@@ -1,7 +1,7 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: true,
-  target:"universal",
+  ssr: false,
+  target:"static",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -9,7 +9,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+     { hid: 'description', name: 'description',  content: "Hello I'm Issam elbouhati, a full stack developer based in Tangier, Morocco. I'm passionate about software development and I'm always looking for new challenges.",
+    },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -23,6 +24,13 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~/plugins/amplify.js', ssr: false },
+    { src: '~/plugins/vuelidate.js', ssr: false },
+    {
+      src: './plugins/vue-easy-lightbox.js',
+      ssr:false,
+      mode: 'client'
+    },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -39,7 +47,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/toast',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -49,7 +58,20 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxt/image',
+
   ],
+  toast: {
+    position: 'top-center',
+    register: [
+      {
+        name: 'my-error',
+        message: 'Oops...Something went wrong',
+        options: {
+          type: 'error'
+        }
+      }
+    ]
+},
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {

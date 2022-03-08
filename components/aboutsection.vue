@@ -1,7 +1,7 @@
 <template>
   <div class="h-4/5 pt-20 w-full bg-black-color flex items-center justify-between px-52">
     <div>
-      <nuxt-img class="h-99" src="/assets/info.webp" />
+      <img class="h-99" src="https://portfolio151100-dev.s3.amazonaws.com/public/info.webp" alt="About me" />
     </div>
     <div class="flex items-start justify-center h-1/4 w-1/2 flex-col">
       <h2
@@ -15,7 +15,7 @@
       <div class="text-white mt-10">
         <h2 class="font-semibold text-2xl">Stack</h2>
         <div class="mt-5 grid overflow-hidden grid-cols-8 grid-rows-8 gap-14">
-          <StackItem v-for="item,i in stack" :key="i" :img="item.src" :title="item.title" />
+          <StackItem v-for="item,i in stack" :key="i" :stack="item" />
         </div>
       </div>
     </div>
@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import { DataStore } from '@aws-amplify/datastore';
+import { Stack } from '../src/models';
 import StackItem from "./stack-item.vue";
 export default {
   data() {
@@ -34,39 +36,20 @@ and a car parts e-commerce website with Nuxtjs/Vuejs and Laravel for the backend
 I'm currently available for freelance work if you are interested in working with please contact me.
 `,
       stack: [
-        {
-          title: "Vuejs",
-          src: "/stack/vue-js.svg",
-        },
-        {
-          title: "Nuxtjs",
-          src: "/stack/nuxt-js.svg",
-        },
-        {
-          title: "Java Script",
-          src: "/stack/js.svg",
-        },
-        {
-          title: "Flutter",
-          src: "/stack/flutter.svg",
-        },
-        {
-          title: "Firebase",
-          src: "/stack/firebase.svg",
-        },
-        {
-          title: "Laravel",
-          src: "/stack/laravel.svg",
-        },
 
-        {
-          title: "Adobe XD",
-          src: "/stack/adobe-xd.svg",
-        },
       ],
     };
   },
   components: { StackItem },
+  fetch(){
+    this.getStacks();
+  },
+  methods:{
+    async getStacks(){
+    var data  =    await DataStore.query(Stack);
+    this.stack = data;
+    }
+  }
 };
 </script>
 

@@ -12,7 +12,7 @@
             >{{subtitle}}</h2>
     </div>
     <div>
-      <nuxt-img src="/assets/image.webp" />
+      <img src="https://portfolio151100-dev.s3.amazonaws.com/public/image.webp"  alt="Home  image"/>
     </div>
   </div>
 </template>

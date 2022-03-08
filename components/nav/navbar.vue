@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-between  w-full bg-black-color h-20 px-52">
+  <div class="fixed flex z-50 items-center justify-between  w-full bg-black-color h-20 px-52">
     <Logo />
     <navigation/>
     <buttonn/>
