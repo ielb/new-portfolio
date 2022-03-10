@@ -2,7 +2,7 @@
   <div>
     <!-- Create a simple footer -->
     <footer class="bg-black-color">
-      <div class="container mx-auto px-6 py-8">
+      <div class=" mx-auto px-6 py-8">
         <div class="flex flex-row justify-center items-center">
           <h3 class="text-white font-bold text-3xl">
             <a href="/" class="text-white">

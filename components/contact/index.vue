@@ -2,8 +2,11 @@
   <section>
     <!-- Contact form  -->
 
-    <div class="h-screen w-full bg-black-color flex items-center justify-between px-52">
-      <div class="w-1/2">
+    <div
+      id="contactme"
+      class="md:h-screen bg-black-color flex items-center xl:flex-row flex-col-reverse justify-between md:px-52"
+    >
+      <div class="md:w-1/2 w-full">
         <div class="bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <div class="mb-4">
             <h1
@@ -12,9 +15,9 @@
               Contact Me
             </h1>
           </div>
-          <form class="w-full" @submit.prevent="submitForm">
+          <form class="" @submit.prevent="submitForm">
             <div class="flex flex-wrap -mx-3 mb-6">
-              <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+              <div class="w-full md:w-1/2 px-3">
                 <label
                   class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                   for="grid-first-name"
@@ -111,7 +114,7 @@
           </div>
         </div>
       </div>
-      <div>
+      <div class="mt-5 md:mt-0">
         <nuxt-img src="/assets/contact.svg" alt="contact" />
       </div>
     </div>
@@ -163,7 +166,7 @@ export default {
     },
   },
   methods: {
-  async  submitForm() {
+    async submitForm() {
       this.submited = true;
       this.$v.$touch();
       if (!this.$v.$invalid) {
@@ -173,12 +176,16 @@ export default {
             email: this.form.email,
             message: this.form.message,
           })
-        ).then(()=>{
-          this.$toast.success( "Message sent successfully");
+        ).then(() => {
+          this.$toast.success("Message sent successfully", 5000);
+          this.submited = false;
           this.form.firstName = "";
           this.form.lastName = "";
           this.form.email = "";
           this.form.message = "";
+          setTimeout(() => {
+            this.$toast.dismiss();
+          }, 2000);
         });
       }
     },

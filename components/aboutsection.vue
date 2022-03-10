@@ -1,9 +1,15 @@
 <template>
-  <div class="h-4/5 pt-20 w-full bg-black-color flex items-center justify-between px-52">
+  <div
+    class="pt-20 p-5 md:h-screen bg-black-color flex items-center xl:flex-row flex-col justify-between 2xl:px-52"
+  >
     <div>
-      <img class="h-99" src="https://portfolio151100-dev.s3.amazonaws.com/public/info.webp" alt="About me" />
+      <img
+        class="h-99"
+        src="https://portfolio151100-dev.s3.amazonaws.com/public/info.webp"
+        alt="About me"
+      />
     </div>
-    <div class="flex items-start justify-center h-1/4 w-1/2 flex-col">
+    <div class="flex items-start justify-center md:h-1/4 md:w-1/2 flex-col">
       <h2
         class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow to-green mb-5"
       >
@@ -14,8 +20,10 @@
       </h4>
       <div class="text-white mt-10">
         <h2 class="font-semibold text-2xl">Stack</h2>
-        <div class="mt-5 grid overflow-hidden grid-cols-8 grid-rows-8 gap-14">
-          <StackItem v-for="item,i in stack" :key="i" :stack="item" />
+        <div
+          class="mt-5 grid overflow-hidden md:grid-cols-4 lg:grid-cols-8 grid-cols-4 grid-rows-8 gap-14"
+        >
+          <StackItem v-for="(item, i) in stack" :key="i" :stack="item" />
         </div>
       </div>
     </div>
@@ -23,8 +31,8 @@
 </template>
 
 <script>
-import { DataStore } from '@aws-amplify/datastore';
-import { Stack } from '../src/models';
+import { DataStore } from "@aws-amplify/datastore";
+import { Stack } from "../src/models";
 import StackItem from "./stack-item.vue";
 export default {
   data() {
@@ -35,21 +43,19 @@ worked on a soccer team mobile application with Flutter and Laravel for the Rest
 and a car parts e-commerce website with Nuxtjs/Vuejs and Laravel for the backend.
 I'm currently available for freelance work if you are interested in working with please contact me.
 `,
-      stack: [
-
-      ],
+      stack: [],
     };
   },
   components: { StackItem },
-  fetch(){
+  fetch() {
     this.getStacks();
   },
-  methods:{
-    async getStacks(){
-    var data  =    await DataStore.query(Stack);
-    this.stack = data;
-    }
-  }
+  methods: {
+    async getStacks() {
+      var data = await DataStore.query(Stack);
+      this.stack = data;
+    },
+  },
 };
 </script>
 
@@ -59,6 +65,18 @@ I'm currently available for freelance work if you are interested in working with
 }
 .h-99 {
   height: 700px;
+}
+
+@media (max-width: 800px) {
+  .h-99 {
+    height: 500px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .h-99 {
+    height: 500px;
+  }
 }
 .text-transparent {
   color: transparent;

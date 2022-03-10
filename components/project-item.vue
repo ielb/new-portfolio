@@ -10,7 +10,7 @@
     >
     </vue-easy-lightbox>
     <div
-      class="project-box mx-10 my-10  rounded-xl flex flex-col transform transition duration-500 hover:scale-105 p-5 bg-black-color"
+      class="w-[400px] md:w-[500px] mx-10 my-10 rounded-xl flex flex-col transform transition duration-500 hover:scale-105 bg-black-color"
     >
       <div class="my-5 cursor-pointer" @click="show">
         <img
@@ -21,7 +21,7 @@
           width="360"
         />
       </div>
-      <div v-show="project.url" class="cursor-pointer project-box-content-link">
+      <div v-show="project.url" class="cursor-pointer">
         <a
           :href="project.url"
           target="_blank"
@@ -89,10 +89,6 @@ export default {
 </script>
 
 <style scoped>
-.project-box {
-  height: auto;
-  width: 400px;
-}
 .shadow {
   box-shadow: 0px 0px 10px rgba(248, 242, 242, 0.5);
 }

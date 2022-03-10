@@ -1,18 +1,18 @@
 <template>
-
   <div
     id="projects"
-    class="w-full bg-black-color flex flex-col pt-10 items-start justify-center px-52"
+    class="md:h-screen bg-black-color flex flex-col pt-10 items-center justify-center 2xl:px-40"
   >
-
-    <div class="flex items-start justify-center h-1/4 flex-col">
+    <div class="flex items-start justify-start w-full flex-col">
       <h2
-        class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow to-green mb-5"
+        class="text-3xl font-bold text-transparent m-5 md:m-0 bg-clip-text bg-gradient-to-r from-yellow to-green mb-5"
       >
         {{ title }}
       </h2>
     </div>
-    <div class="grid overflow-hidden grid-cols-3 grid-rows-8 gap-4">
+    <div
+      class="grid overflow-hidden 2xl:grid-cols-3 md:grid-cols-2 grid-cols-1 grid-rows-8 gap-4"
+    >
       <div v-for="(project, i) in projects" :key="i">
         <project-item :project="project" />
       </div>
@@ -35,11 +35,10 @@ export default {
   methods: {
     async getProjects() {
       this.projects = await DataStore.query(Project);
-      console.log(this.projects);
     },
   },
   fetch() {
-    this.getProjects()
+    this.getProjects();
   },
 };
 </script>

@@ -2,7 +2,7 @@
   <div class="flex flex-wrap">
     <div class="w-full text-center">
     <div ref="btnRef" v-on:mouseenter="toggleTooltip()" v-on:mouseleave="toggleTooltip()" class="cursor-pointer">
-       <img :title="stack.title"  class="h-10 w-10" :src="stack.image" :alt="stack.title" />
+       <img :title="stack.title" class="h-20 w-20"  height="40" width="40" :src="stack.image" :alt="stack.title" />
     </div>
       <div ref="tooltipRef" v-bind:class="{'hidden': !tooltipShow, 'block': tooltipShow}">
         <div>
