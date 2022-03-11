@@ -23,5 +23,26 @@
         }
       }
     }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-portfolio-prod-13126-authRole",
+      "UnauthRoleArn": "arn:aws:iam::395258972482:role/amplify-portfolio-prod-13126-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::395258972482:role/amplify-portfolio-prod-13126-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-portfolio-prod-13126-deployment",
+      "UnauthRoleName": "amplify-portfolio-prod-13126-unauthRole",
+      "StackName": "amplify-portfolio-prod-13126",
+      "StackId": "arn:aws:cloudformation:us-east-1:395258972482:stack/amplify-portfolio-prod-13126/e03d1ac0-a0d2-11ec-9607-0a955b06f781",
+      "AmplifyAppId": "dgf2lnweyly6d"
+    },
+    "categories": {
+      "function": {
+        "S3Trigger50ddd26d": {}
+      },
+      "auth": {
+        "portfolio9f7a06b7": {}
+      }
+    }
   }
 }
