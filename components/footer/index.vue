@@ -2,11 +2,11 @@
   <div>
     <!-- Create a simple footer -->
     <footer class="bg-black-color">
-      <div class=" mx-auto px-6 py-8">
+      <div class="mx-auto px-6 py-8">
         <div class="flex flex-row justify-center items-center">
           <h3 class="text-white font-bold text-3xl">
             <a href="/" class="text-white">
-              <nuxt-img src="/assets/logo.png" alt="Portfolio logo" />
+              <Logo />
             </a>
           </h3>
           <p class="ml-5 text-gray-400 text-sm">
@@ -24,7 +24,8 @@
 </template>
 
 <script>
-export default {};
+import Logo from "../nav/Logo.vue";
+export default { components: { Logo } };
 </script>
 
 <style></style>

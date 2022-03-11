@@ -115,7 +115,10 @@
         </div>
       </div>
       <div class="mt-5 md:mt-0">
-        <nuxt-img src="/assets/contact.svg" alt="contact" />
+        <img
+          src="https://portfolio151100-dev.s3.amazonaws.com/public/contact.svg"
+          alt="contact"
+        />
       </div>
     </div>
   </section>

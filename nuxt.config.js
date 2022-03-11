@@ -1,7 +1,7 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: true,
-  target: 'universal',
+  ssr: false,
+  target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -27,11 +27,7 @@ export default {
   plugins: [
     { src: '~/plugins/amplify.js', ssr: false },
     { src: '~/plugins/vuelidate.js', ssr: false },
-    {
-      src: './plugins/vue-easy-lightbox.js',
-      ssr:false,
-      mode: 'client'
-    },
+    { src: './plugins/vue-easy-lightbox.js',  ssr:false, },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
