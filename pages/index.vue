@@ -17,7 +17,7 @@ import Projectsection from "~/components/projectsection.vue";
 import Contactsection from "~/components/contact/index.vue";
 import Social from "~/components/social-item.vue";
 import { DataStore } from "@aws-amplify/datastore";
-import { SocialItem } from "../src/models";
+import { SocialItem } from "~/src/models";
 
 export default {
   components: {

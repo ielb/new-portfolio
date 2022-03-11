@@ -32,7 +32,7 @@
 
 <script>
 import { DataStore } from "@aws-amplify/datastore";
-import { Stack } from "../src/models";
+import { Stack } from "~/src/models";
 import StackItem from "./stack-item.vue";
 export default {
   data() {
