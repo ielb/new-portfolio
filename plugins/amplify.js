@@ -1,3 +1,4 @@
 import {Amplify} from 'aws-amplify'
-import awsconfig from '~/aws-exports'
-Amplify.configure(awsconfig);
+import '@aws-amplify/ui-vue';
+import config from '../src/aws-exports'
+Amplify.configure(config);
