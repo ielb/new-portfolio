@@ -4,7 +4,7 @@
 
     <div
       id="contactme"
-      class="md:h-screen bg-black-color flex items-center xl:flex-row flex-col-reverse justify-between md:px-52"
+      class="my-20 bg-black-color flex items-center flex-col-reverse md:flex-row justify-between px-10 2xl:px-52"
     >
       <div class="md:w-1/2 w-full">
         <div class="bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -179,17 +179,16 @@ export default {
             email: this.form.email,
             message: this.form.message,
           })
-        ).then(() => {
-          this.$toast.success("Message sent successfully", 5000);
-          this.submited = false;
-          this.form.firstName = "";
-          this.form.lastName = "";
-          this.form.email = "";
-          this.form.message = "";
-          setTimeout(() => {
-            this.$toast.dismiss();
-          }, 2000);
-        });
+        );
+        this.$toast.success("Message sent successfully");
+        this.submited = false;
+        this.form.firstName = "";
+        this.form.lastName = "";
+        this.form.email = "";
+        this.form.message = "";
+        setTimeout(() => {
+          this.$toast.dismiss();
+        }, 2000);
       }
     },
   },

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="md:h-screen pt-40 md:mt-0 bg-black-color flex items-center lg:flex-row flex-col-reverse justify-center lg:justify-between md:px-52"
+    class="py-20 md:mt-0 bg-black-color flex items-center lg:flex-row flex-col-reverse justify-center 2xl:h-screen lg:justify-between md:px-10 2xl:px-52"
   >
     <div class="flex items-start justify-center flex-col">
       <h2 class="text-3xl font-bold text-white tracking-wider">{{ title }}</h2>

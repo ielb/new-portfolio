@@ -1,6 +1,6 @@
 <template>
   <div
-    class="pt-20 p-5 md:h-screen bg-black-color flex items-center xl:flex-row flex-col justify-between 2xl:px-52"
+    class="p-5 py-20 2xl:h-screen bg-black-color flex items-center xl:flex-row flex-col justify-between 2xl:px-52"
   >
     <div>
       <img
@@ -21,7 +21,7 @@
       <div class="text-white mt-10">
         <h2 class="font-semibold text-2xl">Stack</h2>
         <div
-          class="mt-5 grid overflow-hidden md:grid-cols-4 lg:grid-cols-8 grid-cols-4 grid-rows-8 gap-14"
+          class="mt-5 grid overflow-hidden md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 grid-cols-4 grid-rows-8 gap-14"
         >
           <StackItem v-for="(item, i) in stack" :key="i" :stack="item" />
         </div>
@@ -47,7 +47,7 @@ I'm currently available for freelance work if you are interested in working with
     };
   },
   components: { StackItem },
-  fetch() {
+  created() {
     this.getStacks();
   },
   methods: {
