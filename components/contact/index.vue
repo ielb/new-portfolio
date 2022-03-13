@@ -116,7 +116,7 @@
       </div>
       <div class="mt-5 md:mt-0">
         <img
-          src="https://portfolio151100-dev.s3.amazonaws.com/public/contact.svg"
+          src="https://firebasestorage.googleapis.com/v0/b/portfolio-9bded.appspot.com/o/assets%2Fcontact.svg?alt=media"
           alt="contact"
         />
       </div>
@@ -125,9 +125,10 @@
 </template>
 
 <script>
-import { DataStore } from "aws-amplify";
 import { required, email } from "vuelidate/lib/validators";
-import { Message } from "~/src/models";
+import { db } from "~/plugins/firebase.js";
+import { collection, addDoc } from "firebase/firestore";
+import Swal from "sweetalert2";
 
 export default {
   data() {
@@ -173,22 +174,25 @@ export default {
       this.submited = true;
       this.$v.$touch();
       if (!this.$v.$invalid) {
-        DataStore.save(
-          new Message({
-            name: this.form.firstName + " " + this.form.lastName,
-            email: this.form.email,
-            message: this.form.message,
-          })
-        );
-        this.$toast.success("Message sent successfully");
+        const { firstName, lastName, email, message } = this.form;
+        const data = {
+          firstName,
+          lastName,
+          email,
+          message,
+          createdAt: new Date(),
+        };
+        var docRef = await addDoc(collection(db, "messages"), data);
+
+        Swal.fire({
+          icon: "success",
+          title: "Message sent",
+        });
         this.submited = false;
         this.form.firstName = "";
         this.form.lastName = "";
         this.form.email = "";
         this.form.message = "";
-        setTimeout(() => {
-          this.$toast.dismiss();
-        }, 2000);
       }
     },
   },

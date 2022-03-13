@@ -25,10 +25,9 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/amplify.js', mode: 'client' },
+    { src: '~/plugins/firebase.js', mode: 'client' },
     { src: '~/plugins/vuelidate.js', ssr: false },
     { src: './plugins/vue-easy-lightbox.js',  ssr:false, },
-    { src: '~/plugins/sweetalert.js', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -56,6 +55,7 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxt/image',
+    'vue-sweetalert2/nuxt'
 
   ],
   toast: {

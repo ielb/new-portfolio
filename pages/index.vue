@@ -16,8 +16,8 @@ import Aboutsection from "~/components/aboutsection.vue";
 import Projectsection from "~/components/projectsection.vue";
 import Contactsection from "~/components/contact/index.vue";
 import Social from "~/components/social-item.vue";
-import { DataStore } from "@aws-amplify/datastore";
-import { SocialItem, Project, Stack } from "~/src/models";
+import { db } from "~/plugins/firebase.js";
+import { collection, getDocs } from "firebase/firestore";
 
 export default {
   components: {
@@ -35,23 +35,30 @@ export default {
       projects: [],
     };
   },
-
-  async mounted() {
-    await DataStore.start();
-    await this.getSocials();
+  async fetch() {
+    await this.getStacks();
+    await this.getItems();
     await this.getProjects();
   },
   methods: {
-    async getSocials() {
-      var models = await DataStore.query(SocialItem);
-      this.items = models;
-      console.log(this.items);
-    },
     async getStacks() {
-      this.stacks = await DataStore.query(Stack);
+      const querySnapshot = await getDocs(collection(db, "stacks"));
+      querySnapshot.forEach((doc) => {
+        this.stacks.push(doc.data());
+      });
     },
     async getProjects() {
-      this.projects = await DataStore.query(Project);
+      const querySnapshot = await getDocs(collection(db, "projects"));
+      querySnapshot.forEach((doc) => {
+        console.log(doc.data());
+        this.projects.push(doc.data());
+      });
+    },
+    async getItems() {
+      const querySnapshot = await getDocs(collection(db, "socials"));
+      querySnapshot.forEach((doc) => {
+        this.items.push(doc.data());
+      });
     },
   },
 };

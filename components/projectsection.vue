@@ -1,7 +1,7 @@
 <template>
   <div
     id="projects"
-    class="pt-20 bg-black-color 2xl:h-screen flex items-center flex-col justify-evenly 2xl:px-52 w-full"
+    class="pt-20 bg-black-color flex items-center flex-col justify-evenly 2xl:px-52 w-full"
   >
     <div class="flex items-start justify-start w-full flex-col">
       <h2

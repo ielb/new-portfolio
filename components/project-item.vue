@@ -29,10 +29,56 @@
           class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow to-green mb-5"
         >
           <img
-            height="22"
-            width="22"
-            src="https://portfolio151100-dev.s3.amazonaws.com/public/link.svg"
+            height="30"
+            width="30"
+            src="https://firebasestorage.googleapis.com/v0/b/portfolio-9bded.appspot.com/o/assets%2Flink.svg?alt=media"
             :alt="project.title + ' Link'"
+          />
+        </a>
+      </div>
+
+      <div v-show="project.github" class="cursor-pointer">
+        <a
+          :href="project.github"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow to-green mb-5"
+        >
+          <img
+            height="30"
+            width="30"
+            src="https://firebasestorage.googleapis.com/v0/b/portfolio-9bded.appspot.com/o/social%2Fgithub.svg?alt=media"
+            :alt="project.title + ' github'"
+          />
+        </a>
+      </div>
+      <div v-show="project.playstore" class="cursor-pointer">
+        <a
+          :href="project.playstore"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow to-green mb-5"
+        >
+          <img
+            height="30"
+            width="30"
+            src=" https://firebasestorage.googleapis.com/v0/b/portfolio-9bded.appspot.com/o/assets%2Fplay.svg?alt=media"
+            :alt="project.title + ' github'"
+          />
+        </a>
+      </div>
+      <div v-show="project.applestore" class="cursor-pointer">
+        <a
+          :href="project.applestore"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow to-green mb-5"
+        >
+          <img
+            height="30"
+            width="30"
+            src="https://firebasestorage.googleapis.com/v0/b/portfolio-9bded.appspot.com/o/assets%2Fapplestore.svg?alt=media"
+            :alt="project.title + ' github'"
           />
         </a>
       </div>

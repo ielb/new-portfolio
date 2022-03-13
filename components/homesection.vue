@@ -15,8 +15,7 @@
     </div>
     <div>
       <img
-        class=""
-        src="https://portfolio151100-dev.s3.amazonaws.com/public/image.webp"
+        src="https://firebasestorage.googleapis.com/v0/b/portfolio-9bded.appspot.com/o/assets%2Fhome.svg?alt=media&token=aa422ab2-4b34-4609-80d2-8e730d4d627f"
         alt="Home  image"
       />
     </div>

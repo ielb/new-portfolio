@@ -5,7 +5,8 @@
     <div>
       <img
         class="h-99"
-        src="https://portfolio151100-dev.s3.amazonaws.com/public/info.webp"
+        src="https://firebasestorage.googleapis.com/v0/b/portfolio-9bded.appspot.com/o/assets%2Fabout.svg?alt=media
+        "
         alt="About me"
       />
     </div>
@@ -31,10 +32,14 @@
 </template>
 
 <script>
-import { DataStore } from "@aws-amplify/datastore";
-import { Stack } from "~/src/models";
 import StackItem from "./stack-item.vue";
 export default {
+  props: {
+    stack: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {
       title: "About",
@@ -43,19 +48,9 @@ worked on a soccer team mobile application with Flutter and Laravel for the Rest
 and a car parts e-commerce website with Nuxtjs/Vuejs and Laravel for the backend.
 I'm currently available for freelance work if you are interested in working with please contact me.
 `,
-      stack: [],
     };
   },
   components: { StackItem },
-  created() {
-    this.getStacks();
-  },
-  methods: {
-    async getStacks() {
-      var data = await DataStore.query(Stack);
-      this.stack = data;
-    },
-  },
 };
 </script>
 
