@@ -5,16 +5,39 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Issam elbouhati | Full Stack Developer',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-     { hid: 'description', name: 'description',  content: "Hello I'm Issam elbouhati, a full stack developer based in Tangier, Morocco. I'm passionate about software development and I'm always looking for new challenges.",
-    },
-      { name: 'format-detection', content: 'telephone=no' }
+    meta: [{
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: "Hello I'm Issam elbouhati, a full stack developer based in Tangier, Morocco. I'm passionate about software development and I'm always looking for new challenges.",
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: "Issam elbouhati full stack developer based in Tangier, Morocco. I'm passionate about software development and I'm always looking for new challenges.",
+      },
+      {
+        hid: 'og:site_name',
+        name: 'og:site_name',
+        content: "Issam elbouhati | Full Stack Developer",
+      },
+
+      {
+        name: 'format-detection',
+        content: 'telephone=no'
+      },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico'
+    }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -23,10 +46,17 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    { src: '~/plugins/firebase.js', },
-    { src: '~/plugins/vuelidate.js', ssr: false },
-    { src: './plugins/vue-easy-lightbox.js',  ssr:false, },
+  plugins: [{
+      src: '~/plugins/firebase.js',
+    },
+    {
+      src: '~/plugins/vuelidate.js',
+      ssr: false
+    },
+    {
+      src: './plugins/vue-easy-lightbox.js',
+      ssr: false,
+    },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -58,16 +88,14 @@ export default {
   ],
   toast: {
     position: 'top-center',
-    register: [
-      {
-        name: 'my-error',
-        message: 'Oops...Something went wrong',
-        options: {
-          type: 'error'
-        }
+    register: [{
+      name: 'my-error',
+      message: 'Oops...Something went wrong',
+      options: {
+        type: 'error'
       }
-    ]
-},
+    }]
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -84,6 +112,5 @@ export default {
 
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  }
+  build: {}
 }
