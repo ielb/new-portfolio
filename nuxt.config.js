@@ -1,7 +1,6 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: false,
-  target: 'static',
+  ssr: true,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -25,7 +24,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/firebase.js', mode: 'client' },
+    { src: '~/plugins/firebase.js', },
     { src: '~/plugins/vuelidate.js', ssr: false },
     { src: './plugins/vue-easy-lightbox.js',  ssr:false, },
   ],
@@ -33,7 +32,6 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
   googleFonts: {
-    download: true,
     families: {
       // a simple name
       Poppins: true,
