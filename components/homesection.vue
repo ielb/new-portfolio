@@ -14,7 +14,7 @@
       </h2>
     </div>
     <div>
-      <img
+      <nuxt-img
         src="https://firebasestorage.googleapis.com/v0/b/portfolio-9bded.appspot.com/o/assets%2Fhome.svg?alt=media&token=aa422ab2-4b34-4609-80d2-8e730d4d627f"
         alt="Home  image"
       />
@@ -26,10 +26,10 @@
 export default {
   data() {
     return {
-      title: "Hello !,",
-      subtitle: "A full-stack Developer",
+      title: 'Hello !,',
+      subtitle: 'A full-stack Developer',
       user: "I'm Issam Elbouhati",
-    };
+    }
   },
-};
+}
 </script>

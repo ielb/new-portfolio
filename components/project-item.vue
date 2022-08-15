@@ -7,13 +7,13 @@
       :imgs="project.images"
       :index="indexx"
       @hide="hide"
-    >
-    </vue-easy-lightbox>
+    ></vue-easy-lightbox>
     <div
-      class="w-[400px] md:w-[500px] mx-10 my-10 rounded-xl flex flex-col transform transition duration-500 hover:scale-105 bg-black-color"
+      class="w-400 md:w-500 mx-10 my-10 rounded-xl flex flex-col transform transition duration-500 hover:scale-105 bg-black-color"
     >
       <div class="my-5 cursor-pointer" @click="show">
-        <img
+        <nuxt-img
+          preload
           class="h-64 w-full bg-cover rounded-xl"
           :src="project.thumbnail"
           alt="img"
@@ -28,7 +28,8 @@
           rel="noopener noreferrer"
           class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow to-green mb-5"
         >
-          <img
+          <nuxt-img
+            preload
             height="30"
             width="30"
             src="https://firebasestorage.googleapis.com/v0/b/portfolio-9bded.appspot.com/o/assets%2Flink.svg?alt=media"
@@ -44,7 +45,8 @@
           rel="noopener noreferrer"
           class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow to-green mb-5"
         >
-          <img
+          <nuxt-img
+            preload
             height="30"
             width="30"
             src="https://firebasestorage.googleapis.com/v0/b/portfolio-9bded.appspot.com/o/social%2Fgithub.svg?alt=media"
@@ -59,7 +61,8 @@
           rel="noopener noreferrer"
           class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow to-green mb-5"
         >
-          <img
+          <nuxt-img
+            preload
             height="30"
             width="30"
             src=" https://firebasestorage.googleapis.com/v0/b/portfolio-9bded.appspot.com/o/assets%2Fplay.svg?alt=media"
@@ -74,7 +77,8 @@
           rel="noopener noreferrer"
           class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow to-green mb-5"
         >
-          <img
+          <nuxt-img
+            preload
             height="30"
             width="30"
             src="https://firebasestorage.googleapis.com/v0/b/portfolio-9bded.appspot.com/o/assets%2Fapplestore.svg?alt=media"
@@ -110,31 +114,37 @@ export default {
     return {
       index: 0,
       visible: false,
-    };
+    }
   },
   methods: {
     show() {
-      this.index = 0;
-      this.visible = true;
+      this.index = 0
+      this.visible = true
     },
     hide() {
-      this.visible = false;
+      this.visible = false
     },
   },
   computed: {
     indexx: {
       get() {
-        return this.index;
+        return this.index
       },
       set(index) {
-        this.index = index;
+        this.index = index
       },
     },
   },
-};
+}
 </script>
 
 <style scoped>
+.w-500 {
+  width: 500px;
+}
+.w-400 {
+  width: 400px;
+}
 .shadow {
   box-shadow: 0px 0px 10px rgba(248, 242, 242, 0.5);
 }

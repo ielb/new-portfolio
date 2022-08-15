@@ -1,7 +1,8 @@
 <template>
   <div class="flex flex-wrap">
     <div class="text-center">
-      <img
+      <nuxt-img
+        preload
         :title="stack.title"
         class="h-20 w-20 stack"
         height="40"
@@ -21,5 +22,5 @@ export default {
       required: true,
     },
   },
-};
+}
 </script>

@@ -22,10 +22,10 @@ const firebaseConfig = {
 var firebaseApp = null;
 const apps = getApps()
 if (!apps.length) {
-    firebaseApp = initializeApp(firebaseConfig)
-    const analytics = getAnalytics(firebaseApp);
+  firebaseApp = initializeApp(firebaseConfig)
+  //const analytics = getAnalytics(firebaseApp);
 } else {
-    firebaseApp = apps[0]
+  firebaseApp = apps[0]
 }
 const db = getFirestore(firebaseApp, {})
 export { db }

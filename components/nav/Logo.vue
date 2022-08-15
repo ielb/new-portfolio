@@ -1,5 +1,6 @@
 <template>
-  <img
+  <nuxt-img
+    preload
     class="h-16"
     height="64"
     alt="Portfolio logo"

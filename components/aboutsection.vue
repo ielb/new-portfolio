@@ -3,7 +3,7 @@
     class="p-5 py-20 2xl:h-screen bg-black-color flex items-center xl:flex-row flex-col justify-between 2xl:px-52"
   >
     <div>
-      <img
+      <nuxt-img
         class="h-99"
         src="https://firebasestorage.googleapis.com/v0/b/portfolio-9bded.appspot.com/o/assets%2Fabout.svg?alt=media
         "
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import StackItem from "./stack-item.vue";
+import StackItem from './stack-item.vue'
 export default {
   props: {
     stack: {
@@ -42,16 +42,16 @@ export default {
   },
   data() {
     return {
-      title: "About",
+      title: 'About',
       content: `I am a full-stack developer, I have
 worked on a soccer team mobile application with Flutter and Laravel for the Rest API, and there is another, It is a delivery  application, one with the same stack , Currently, I'm working on a point of sell system for a company client that I work in
 and a car parts e-commerce website with Nuxtjs/Vuejs and Laravel for the backend.
 I'm currently available for freelance work if you are interested in working with please contact me.
 `,
-    };
+    }
   },
   components: { StackItem },
-};
+}
 </script>
 
 <style>

@@ -1,37 +1,38 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: true,
+  target: 'universal',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Issam elbouhati | Full Stack Developer',
     meta: [{
-        charset: 'utf-8'
-      },
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
-      },
-      {
-        hid: 'description',
-        name: 'description',
-        content: "Hello I'm Issam elbouhati, a full stack developer based in Tangier, Morocco. I'm passionate about software development and I'm always looking for new challenges.",
-      },
-      {
-        hid: 'og:description',
-        name: 'og:description',
-        content: "Issam elbouhati full stack developer based in Tangier, Morocco. I'm passionate about software development and I'm always looking for new challenges.",
-      },
-      {
-        hid: 'og:site_name',
-        name: 'og:site_name',
-        content: "Issam elbouhati | Full Stack Developer",
-      },
+      charset: 'utf-8'
+    },
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1'
+    },
+    {
+      hid: 'description',
+      name: 'description',
+      content: "Hello I'm Issam elbouhati, a full stack developer based in Tangier, Morocco. I'm passionate about software development and I'm always looking for new challenges.",
+    },
+    {
+      hid: 'og:description',
+      name: 'og:description',
+      content: "Issam elbouhati full stack developer based in Tangier, Morocco. I'm passionate about software development and I'm always looking for new challenges.",
+    },
+    {
+      hid: 'og:site_name',
+      name: 'og:site_name',
+      content: "Issam elbouhati | Full Stack Developer",
+    },
 
-      {
-        name: 'format-detection',
-        content: 'telephone=no'
-      },
+    {
+      name: 'format-detection',
+      content: 'telephone=no'
+    },
     ],
     link: [{
       rel: 'icon',
@@ -47,16 +48,16 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [{
-      src: '~/plugins/firebase.js',
-    },
-    {
-      src: '~/plugins/vuelidate.js',
-      ssr: false
-    },
-    {
-      src: './plugins/vue-easy-lightbox.js',
-      ssr: false,
-    },
+    src: '~/plugins/firebase.js',
+  },
+  {
+    src: '~/plugins/vuelidate.js',
+    ssr: false
+  },
+  {
+    src: './plugins/vue-easy-lightbox.js',
+    ssr: false,
+  },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
